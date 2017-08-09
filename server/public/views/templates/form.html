@@ -1,4 +1,5 @@
 <h2>Form HTML Pop Up</h2>
+<div class="container">
 <!-- Task Name -->
 <md-content layout-gt-sm="row" layout-padding>
    <div>
@@ -32,8 +33,12 @@
           <textarea ng-model="user.notes" md-maxlength="142" rows="4" md-select-on-focus></textarea>
         </md-input-container>
 <!-- Date-Picker -->
-<div layout-gt-xs="row">
-  <div flex-gt-xs>
-    <h4>What Day(s)</h4>
-    <md-datepicker ng-model="ctrl.myDate" md-placeholder="Enter date"></md-datepicker>
-  </div>
+<input type="checkbox" ng-model="ctrl.user.agree">Today
+<input type="checkbox" ng-model="ctrl.user.agree">Tomorrow
+<input type="checkbox" ng-model="ctrl.user.agree">Friday
+<input type="checkbox" ng-model="ctrl.user.agree">Saturday
+<input type="checkbox" ng-model="ctrl.user.agree">Sunday
+<input type="checkbox" ng-model="ctrl.user.agree">Monday
+<input type="checkbox" ng-model="ctrl.user.agree">Tuesday
+<md-button>Submit Tasks</md-button>
+</div>
