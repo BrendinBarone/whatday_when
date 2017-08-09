@@ -1,0 +1,39 @@
+<h2>Form HTML Pop Up</h2>
+<!-- Task Name -->
+<md-content layout-gt-sm="row" layout-padding>
+   <div>
+     <md-input-container>
+       <label>Task Name</label>
+       <input ng-model="user.title">
+     </md-input-container>
+   </div>
+ </md-content>
+<!-- Start Time -->
+<md-content layout-gt-sm="row" layout-padding>
+   <div>
+     <md-input-container>
+       <label>Start Time</label>
+       <input ng-model="user.title">
+     </md-input-container>
+   </div>
+ </md-content>
+<!-- End Time -->
+<md-content layout-gt-sm="row" layout-padding>
+   <div>
+     <md-input-container>
+       <label>End Time</label>
+       <input ng-model="user.title">
+     </md-input-container>
+   </div>
+ </md-content>
+<!-- Task Notes -->
+<md-input-container class="md-block">
+          <label>Notes</label>
+          <textarea ng-model="user.notes" md-maxlength="142" rows="4" md-select-on-focus></textarea>
+        </md-input-container>
+<!-- Date-Picker -->
+<div layout-gt-xs="row">
+  <div flex-gt-xs>
+    <h4>What Day(s)</h4>
+    <md-datepicker ng-model="ctrl.myDate" md-placeholder="Enter date"></md-datepicker>
+  </div>

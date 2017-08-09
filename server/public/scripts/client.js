@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial']);
 
 /// Routes ///
 myApp.config(function($routeProvider, $locationProvider) {
@@ -22,9 +22,27 @@ myApp.config(function($routeProvider, $locationProvider) {
         }
       }
     })
-    .when('/info', {
-      templateUrl: '/views/templates/info.html',
-      controller: 'InfoController',
+    .when('/listview', {
+      templateUrl: '/views/templates/listview.html',
+      controller: 'ListViewController as lvc',
+      resolve: {
+        getuser : function(UserService){
+          return UserService.getuser();
+        }
+      }
+    })
+    .when('/form', {
+      templateUrl: '/views/templates/form.html',
+      controller: 'FormController as fc',
+      resolve: {
+        getuser : function(UserService){
+          return UserService.getuser();
+        }
+      }
+    })
+    .when('/completed', {
+      templateUrl: '/views/templates/completed.html',
+      controller: 'CompletedController as cc',
       resolve: {
         getuser : function(UserService){
           return UserService.getuser();

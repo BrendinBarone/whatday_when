@@ -8,6 +8,7 @@ body, html {
 .instructions .container h1 {
   font-size: 32px;
   font-weight: 600;
+  color: #36b3bb;
 }
 
 .instructions {

@@ -3,6 +3,18 @@ var router = express.Router();
 var path = require('path');
 var pool = require('../modules/pool.js');
 var encryptLib = require('../modules/encryption');
+var pg = require('pg');
+
+//adding database to server
+var config = {
+ database: 'whatday_when_db', // name of your database
+ host: 'localhost', // where is your database?
+ port: 5432, // port for the database
+ max: 10, // how many connections at one time?
+ idleTimeoutMillis: 30000 // 30 second time out
+};
+
+var pool = new pg.Pool(config);
 
 // Handles request for HTML file
 router.get('/', function(req, res, next) {
@@ -10,7 +22,6 @@ router.get('/', function(req, res, next) {
   res.sendFile(path.resolve(__dirname, '../public/views/templates/register.html'));
 });
 
-// Handles POST request with new user data
 // Handles POST request with new user data
 router.post('/', function(req, res, next) {
 
