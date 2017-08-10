@@ -13,6 +13,7 @@
     "angular": "^1.6.5",
     "angular-animate": "^1.6.5",
     "angular-aria": "^1.6.5",
+    "angular-circular-timepicker": "^0.3.0",
     "angular-material": "^1.1.4",
     "angular-route": "^1.6.5",
     "bcrypt": "^1.0.2",

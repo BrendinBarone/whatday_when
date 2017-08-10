@@ -1,34 +1,21 @@
-<div class="container">
-  <h2>Nice Work!!</h2>
-<table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Task Name</th>
-          <th>Time</th>
-          <th>Date</th>
-          <th colspan="2">Notes</th>
-          <th> </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>HC Pick up A</td>
-          <td>8:00am</td>
-          <td>07/29/2017</td>
-          <td colspan="2">bring raincoat</td>
-        </tr>
-        <tr>
-          <td>HC Get Milk</td>
-          <td>5:30pm</td>
-          <td>07/24/2017</td>
-          <td colspan="2">whole milk, organic</td>
-        </tr>
-        <tr>
-          <td>HC Mow lawn</td>
-          <td>10:00am</td>
-          <td>07/13/2017</td>
-          <td colspan="2">It's gonna rain</td>
-        </tr>
-      </tbody>
-    </table>
-</div>
+<div ng-controller="CompletedController">
+  <div class="container">
+    <h3>Way to go, Look what you've done!!</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Task Name</th>
+            <th>Completed On</th>
+            <th colspan="2">Notes</th>
+            <th> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="task in cc.tasks">
+            <td>{{task.taskname}}</td>
+            <td>{{task.date}}</td>
+            <td colspan="2">{{task.notes}}</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>

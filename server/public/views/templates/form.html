@@ -1,11 +1,12 @@
-<h2>Form HTML Pop Up</h2>
+<h2>Today is <span id="date"></span>.  What's next?</h2>
 <div class="container">
+  <form>
 <!-- Task Name -->
 <md-content layout-gt-sm="row" layout-padding>
    <div>
      <md-input-container>
        <label>Task Name</label>
-       <input ng-model="user.title">
+       <input ng-model="user.taskname">
      </md-input-container>
    </div>
  </md-content>
@@ -13,17 +14,8 @@
 <md-content layout-gt-sm="row" layout-padding>
    <div>
      <md-input-container>
-       <label>Start Time</label>
-       <input ng-model="user.title">
-     </md-input-container>
-   </div>
- </md-content>
-<!-- End Time -->
-<md-content layout-gt-sm="row" layout-padding>
-   <div>
-     <md-input-container>
-       <label>End Time</label>
-       <input ng-model="user.title">
+       <label>Time</label>
+       <circulartimepicker model="data.date"></circulartimepicker>
      </md-input-container>
    </div>
  </md-content>
@@ -33,12 +25,15 @@
           <textarea ng-model="user.notes" md-maxlength="142" rows="4" md-select-on-focus></textarea>
         </md-input-container>
 <!-- Date-Picker -->
-<input type="checkbox" ng-model="ctrl.user.agree">Today
-<input type="checkbox" ng-model="ctrl.user.agree">Tomorrow
-<input type="checkbox" ng-model="ctrl.user.agree">Friday
-<input type="checkbox" ng-model="ctrl.user.agree">Saturday
-<input type="checkbox" ng-model="ctrl.user.agree">Sunday
-<input type="checkbox" ng-model="ctrl.user.agree">Monday
-<input type="checkbox" ng-model="ctrl.user.agree">Tuesday
+<input type="checkbox" ng-model="checkboxModel.value1">Today
+<input type="checkbox" ng-model="checkboxModel.value2">Tomorrow
+<input type="checkbox" ng-model="checkboxModel.value3">Friday
+<input type="checkbox" ng-model="checkboxModel.value4">Saturday
+<input type="checkbox" ng-model="checkboxModel.value5">Sunday
+<input type="checkbox" ng-model="checkboxModel.value6">Monday
+<input type="checkbox" ng-model="checkboxModel.value7">Tuesday
+<!-- submit button -->
 <md-button>Submit Tasks</md-button>
+</form>
+
 </div>

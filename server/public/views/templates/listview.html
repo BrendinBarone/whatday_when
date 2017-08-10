@@ -1,68 +1,68 @@
 <div ng-controller="ListViewController">
   <div class="container">
-      <md-button><a href="#/form">Add Task</a></md-button>
+    <md-button><a href="#/form">Add Task</a></md-button> </br>
 
-      <md-card-actions layout="row" layout-align="center center">
-        <md-button>Previous Day</md-button>
-        <span>Today: 08/09/2017</span>
-        <md-button>Next Day</md-button>
+    <md-card-actions layout="row" >
+      <md-button>Previous Day</md-button>
+      <p class="marquee"> Today's the Day </br>
+        <span id="date"></span>
+      </p>
+      <md-button>Next Day</md-button>
 
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Task Name</th>
-              <th>Start Time</th>
-              <th>End Time</th>
-              <th colspan="2">Notes</th>
-              <th> </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>HC Pick up A</td>
-              <td>8:00am</td>
-              <td>8:30am</td>
-              <td colspan="2">bring raincoat</td>
-              <td>
-                <md-button>Edit</md-button>
-              </td>
-              <td>
-                <md-button>Remove</md-button>
-              </td>
-              <td>
-                <md-button>Done!!</md-button>
-              </td>
-            </tr>
-            <tr>
-              <td>HC Get Milk</td>
-              <td>5:30pm</td>
-              <td>5:45pm</td>
-              <td colspan="2">whole milk, organic</td>
-              <td>
-                <md-button>Edit</md-button>
-              </td>
-              <td>
-                <md-button>Remove</md-button>
-              </td>
-              <td>
-                <md-button>Done!!</md-button>
-              </td>
-            </tr>
-            <tr>
-              <td>HC Mow lawn</td>
-              <td>10:00am</td>
-              <td>5:30pm</td>
-              <td colspan="2">It's gonna rain</td>
-              <td>
-                <md-button>Edit</md-button>
-              </td>
-              <td>
-                <md-button>Remove</md-button>
-              </td>
-              <td>
-                <md-button>Done!!</md-button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Task Name</th>
+            <th>Time</th>
+            <th colspan="2">Notes</th>
+            <th> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="task in lvc.tasks">
+            <td>{{task.taskname}}</td>
+            <td>{{task.time}}</td>
+            <td colspan="2">{{task.notes}}</td>
+            <td>
+              <md-button>Edit</md-button>
+            </td>
+            <td>
+              <md-button>Remove</md-button>
+            </td>
+            <td>
+              <md-button>Done!!</md-button>
+            </td>
+          </tr>
+          <!-- <tr>
+            <td>HC Get Milk</td>
+            <td>5:30pm</td>
+            <td>5:45pm</td>
+            <td colspan="2">whole milk, organic</td>
+            <td>
+              <md-button>Edit</md-button>
+            </td>
+            <td>
+              <md-button>Remove</md-button>
+            </td>
+            <td>
+              <md-button>Done!!</md-button>
+            </td>
+          </tr>
+          <tr>
+            <td>HC Mow lawn</td>
+            <td>10:00am</td>
+            <td>5:30pm</td>
+            <td colspan="2">It's gonna rain</td>
+            <td>
+              <md-button>Edit</md-button>
+            </td>
+            <td>
+              <md-button>Remove</md-button>
+            </td>
+            <td>
+              <md-button>Done!!</md-button>
+            </td>
+          </tr> -->
+        </tbody>
+      </table>
   </div>
