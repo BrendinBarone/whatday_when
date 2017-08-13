@@ -6,7 +6,8 @@ var passport = require('./strategies/sql.localstrategy');
 var sessionConfig = require('./modules/session.config');
 
 // Route includes
-var completedRouter = require('./routes/completed.router')
+var formRouter = require('./routes/form.router.js');
+var completedRouter = require('./routes/completed.router');
 var tasksRouter = require('./routes/tasks.router');
 var indexRouter = require('./routes/index.router');
 var userRouter = require('./routes/user.router');
@@ -29,6 +30,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Routes
+app.use('/form', formRouter)
 app.use('/tasks', tasksRouter);
 app.use('/completed', completedRouter)
 app.use('/register', registerRouter);

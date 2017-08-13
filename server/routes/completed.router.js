@@ -26,9 +26,10 @@ router.get('/', function(req, res){
     } else {
       // We connected to the database!!!
       // Now we're going to GET things from the db
-      var queryText = 'SELECT * FROM "tasks" WHERE completed= true';
+      var queryText = 'SELECT * FROM "tasks" JOIN "users" ON "users"."id" = "tasks"."user_id"' +
+      ' WHERE "users"."id"= $1 AND "completed"= true ORDER BY "date" DESC';
       // errorMakingQuery is a bool, result is an object
-      db.query(queryText, function(errorMakingQuery, result){
+      db.query(queryText, [req.user.id], function(errorMakingQuery, result){
         done();
         if(errorMakingQuery) {
           console.log('Attempted to query with', queryText);

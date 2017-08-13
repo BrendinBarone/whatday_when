@@ -1,19 +1,41 @@
 myApp.controller('ListViewController', function(UserService, $http) {
-  console.log('ListViewController created');
-  var lvc = this;
-  lvc.userService = UserService;
-  lvc.userObject = UserService.userObject;
-  // todays date
-  var today = new Date();
-   document.getElementById('date').innerHTML= today.toDateString();
+      console.log('ListViewController created');
+      var lvc = this;
+      lvc.userService = UserService;
+      lvc.userObject = UserService.userObject;
+      // todays date
+      var today = moment().calendar();
+      console.log(today);
+      lvc.today = today;
 
-   //call gettasks function to pull tasks from DB
-getTasks();
+      // tomorrows date
+      var tomorrow = moment().add(1, 'days').calendar('dddd');
+      console.log(tomorrow);
+      lvc.tomorrow = tomorrow;
 
-// getTasks function
-function getTasks() {
-$http.get('/tasks').then(function(response) {
-console.log(response);
-lvc.tasks = response.data
-});
-}});
+      // yesterdays date
+      var yesterday = moment().subtract(1, 'days').calendar('dddd');
+      console.log(yesterday);
+      lvc.yesterday = yesterday;
+
+      //call gettasks function to pull tasks from DB
+      getTasks();
+
+      // getTasks function
+      function getTasks() {
+        $http.get('/tasks').then(function(response) {
+          console.log(response.data);
+          lvc.tasks = response.data;
+          console.log("listview object", lvc.tasks);
+        })
+      };
+
+      // remove Tasks function
+      lvc.deleteTask = function(id) {
+        console.log('calling delete function, id = ', id);
+        $http.delete('/tasks/' + id).then(function(response) {
+          getTasks();
+          console.log('delete worked', response);
+          alert('Task has been deleted');
+        })}
+      });

@@ -1,19 +1,22 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Crimson Text', serif;
   font-size: 14px;
+
 }
 
 .instructions .container h1 {
-  font-size: 32px;
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 42px;
   font-weight: 600;
-  color: #36b3bb;
+  color: #f61;
+  text-shadow: 0px 1px #ffb;
 }
 
 .instructions {
-  background-color: #333333;
-  color: #DDDDDD;
+  background-color: #363636;
+  color: #3bb;
   padding: 15px;
 }
 
@@ -50,7 +53,7 @@ body, html {
 }
 
 .navbar {
-  background-color: #333333;
+  background-color: #f62;
   width: 100%;
   border-radius: 0px;
 }
@@ -68,7 +71,7 @@ li {
 
 li a {
   display: block;
-  color: white;
+  color: #363636;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -78,4 +81,8 @@ li a {
 li a:hover {
   text-decoration: underline;
   color: #eee;
+  text-shadow: 0px 1px #fb0;
+}
+.welcomePageText {
+font-family: 'Fredericka the Great', cursive;
 }

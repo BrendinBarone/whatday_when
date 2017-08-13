@@ -1,39 +1,40 @@
-<h2>Today is <span id="date"></span>.  What's next?</h2>
-<div class="container">
-  <form>
-<!-- Task Name -->
-<md-content layout-gt-sm="row" layout-padding>
-   <div>
-     <md-input-container>
-       <label>Task Name</label>
-       <input ng-model="user.taskname">
-     </md-input-container>
-   </div>
- </md-content>
-<!-- Start Time -->
-<md-content layout-gt-sm="row" layout-padding>
-   <div>
-     <md-input-container>
-       <label>Time</label>
-       <circulartimepicker model="data.date"></circulartimepicker>
-     </md-input-container>
-   </div>
- </md-content>
-<!-- Task Notes -->
-<md-input-container class="md-block">
-          <label>Notes</label>
-          <textarea ng-model="user.notes" md-maxlength="142" rows="4" md-select-on-focus></textarea>
-        </md-input-container>
-<!-- Date-Picker -->
-<input type="checkbox" ng-model="checkboxModel.value1">Today
-<input type="checkbox" ng-model="checkboxModel.value2">Tomorrow
-<input type="checkbox" ng-model="checkboxModel.value3">Friday
-<input type="checkbox" ng-model="checkboxModel.value4">Saturday
-<input type="checkbox" ng-model="checkboxModel.value5">Sunday
-<input type="checkbox" ng-model="checkboxModel.value6">Monday
-<input type="checkbox" ng-model="checkboxModel.value7">Tuesday
-<!-- submit button -->
-<md-button>Submit Tasks</md-button>
+<div ng-controller="FormController">
+  <div class="container">
+    <h2 class="welcomePageText">Today is {{fc.top}}. What's next??</h2>
+    <form>
+      <!-- Task Name -->
+      <md-content layout-gt-sm="row" layout-padding>
+        <div>
+          <md-input-container>
+            <label>Task Name</label>
+            <input type="text" ng-model="tasks.taskname">
+          </md-input-container>
+        </div>
+      </md-content>
+      <!-- Start Time -->
+      <md-content layout-gt-sm="row" layout-padding>
+        <div>
+          <md-input-container>
+            <label>Time</label>
+            <input type="time" ng-model="tasks.time" />
+          </md-input-container>
+        </div>
+      </md-content>
+      <!-- Task Notes -->
+      <md-input-container class="md-block">
+        <label>Notes</label>
+        <textarea ng-model="user.notes" md-maxlength="142" rows="4" md-select-on-focus></textarea>
+      </md-input-container>
+      <!-- Date-Picker -->
+      <input type="checkbox" checklist-model="checkboxModel.value1">{{fc.today}}
+      <input type="checkbox" checklist-model="checkboxModel.value2">{{fc.tomorrow}}
+      <input type="checkbox" checklist-model="checkboxModel.value3">{{fc.twoDays}}
+      <input type="checkbox" checklist-model="checkboxModel.value4">{{fc.threeDays}}
+      <input type="checkbox" checklist-model="checkboxModel.value5">{{fc.fourDays}}
+      <input type="checkbox" checklist-model="checkboxModel.value6">{{fc.fiveDays}}
+      <input type="checkbox" checklist-model="checkboxModel.value7">{{fc.sixDays}}
+      <!-- submit button -->
+      </md-button ng-submit="fc.submitForm(task.id)"><a href="#/listview">Submit Tasks</md-button>
 </form>
 
 </div>

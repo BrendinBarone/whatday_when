@@ -14,7 +14,7 @@ var config = {
  idleTimeoutMillis: 30000 // 30 second time out
 };
 
-var pool = new pg.Pool(config);
+ var pool = new pg.Pool(config);
 
 // Handles request for HTML file
 router.get('/', function(req, res, next) {

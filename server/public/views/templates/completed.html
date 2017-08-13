@@ -11,9 +11,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="task in cc.tasks">
+          <tr ng-repeat="task in cc.tasks | orderBy : date">
             <td>{{task.taskname}}</td>
-            <td>{{task.date}}</td>
+            <td>{{task.date | date: 'shortDate'}}</td>
             <td colspan="2">{{task.notes}}</td>
           </tr>
         </tbody>
