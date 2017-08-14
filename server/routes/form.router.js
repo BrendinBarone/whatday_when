@@ -29,11 +29,11 @@ router.post('/', function(req, res) {
     } else {
       // We connected to the database!!!
       // Now we're going to POST things to the db
-      var queryText = 'INSERT INTO "tasks" ("taskname", "date", "time", "notes", "user_id", "completed")' +
+      var queryText = 'INSERT INTO "tasks" ("taskname", "time", "notes", "user_id", "date")' +
         'VALUES ($1, $2, $3, $4, $5, false)';
 
       // errorMakingQuery is a bool, result is an object
-      db.query(queryText, [taskForm.taskname, taskForm.date taskForm.time, taskForm.notes, taskForm.user_id], function(errorMakingQuery, result) {
+      db.query(queryText, [taskForm.taskname, taskForm.time, taskForm.notes, taskForm.user_id, fc.today], function(errorMakingQuery, result) {
         done();
         if (errorMakingQuery) {
           console.log('Attempted to query with', queryText);

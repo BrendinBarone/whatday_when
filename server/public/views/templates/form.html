@@ -1,6 +1,7 @@
 <div ng-controller="FormController">
-  <div class="container">
-    <h2 class="welcomePageText">Today is {{fc.top}}. What's next??</h2>
+  <div class="container" id="boardF">
+    <h2 class="welcomePageText">Today is <span class="topDate">{{fc.top}}</span>.</h2>
+    <h3>What's Next??</h3>
     <form>
       <!-- Task Name -->
       <md-content layout-gt-sm="row" layout-padding>
@@ -23,18 +24,18 @@
       <!-- Task Notes -->
       <md-input-container class="md-block">
         <label>Notes</label>
-        <textarea ng-model="user.notes" md-maxlength="142" rows="4" md-select-on-focus></textarea>
+        <textarea ng-model="tasks.notes" md-maxlength="142" rows="4" md-select-on-focus></textarea>
       </md-input-container>
       <!-- Date-Picker -->
-      <input type="checkbox" checklist-model="checkboxModel.value1">{{fc.today}}
-      <input type="checkbox" checklist-model="checkboxModel.value2">{{fc.tomorrow}}
-      <input type="checkbox" checklist-model="checkboxModel.value3">{{fc.twoDays}}
-      <input type="checkbox" checklist-model="checkboxModel.value4">{{fc.threeDays}}
-      <input type="checkbox" checklist-model="checkboxModel.value5">{{fc.fourDays}}
-      <input type="checkbox" checklist-model="checkboxModel.value6">{{fc.fiveDays}}
-      <input type="checkbox" checklist-model="checkboxModel.value7">{{fc.sixDays}}
+      <input type="checkbox" checklist-model="date1">{{fc.today}}
+      <input type="checkbox" checklist-model="date2">{{fc.tomorrow}}
+      <input type="checkbox" checklist-model="date3">{{fc.twoDays}}
+      <input type="checkbox" checklist-model="date4">{{fc.threeDays}}
+      <input type="checkbox" checklist-model="date5">{{fc.fourDays}}
+      <input type="checkbox" checklist-model="date6">{{fc.fiveDays}}
+      <input type="checkbox" checklist-model="date7">{{fc.sixDays}}
       <!-- submit button -->
-      </md-button ng-submit="fc.submitForm(task.id)"><a href="#/listview">Submit Tasks</md-button>
+    <a href="#/listview"><md-button ng-submit="fc.submitForm(tasks.id)">Submit Tasks</md-button></a>
 </form>
 
 </div>

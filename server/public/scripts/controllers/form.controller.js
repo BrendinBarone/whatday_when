@@ -3,7 +3,7 @@ myApp.controller('FormController', function(UserService, $http) {
   var fc = this;
   fc.userService = UserService;
   //top date
-  var top = moment().format('dddd');
+  var top = moment().format('dddd') + ', ' + moment().format('MMM Do');
   console.log(top);
   fc.top = top;
 
@@ -44,14 +44,14 @@ myApp.controller('FormController', function(UserService, $http) {
 
   //Check boxes
   fc.checkboxModel = {
-    value1: false,
-    value3: false,
-    value4: false,
-    value5: false,
-    value6: false,
-    value7: false
+    date1: false,
+    date3: false,
+    date4: false,
+    date5: false,
+    date6: false,
+    date7: false
   }
-
+// submitForm();
   // Post Tasks function
   function submitForm(id) {
     $http.post('/form/' + id).then(function(response) {
