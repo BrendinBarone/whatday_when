@@ -131,6 +131,12 @@ li a:hover {
   color: #8a4db3;
   text-shadow: 0px 1px 2px #2b9988;
 }
+#nameFrame {
+  background-color: #e3e3e3;
+  padding: 8px;
+  border-radius: 34px;
+  float: right;
+}
 #boardLV {
   background-color: #3caa99;
 }

@@ -14,14 +14,14 @@ myApp.controller('ListViewController', function(UserService, $http) {
       lvc.tomorrow = tomorrow;
 
       // yesterdays date
-      var yesterday = moment().subtract(1, 'days').calendar('dddd');
+      var yesterday = moment().subtract(1, 'days').calendar('dddd');;
       console.log(yesterday);
       lvc.yesterday = yesterday;
 
       //call gettasks function to pull tasks from DB
       getTasks();
 
-      // getTasks function
+      // getTasks function (function declaration)
       function getTasks() {
         $http.get('/tasks').then(function(response) {
           console.log(response.data);
@@ -30,7 +30,7 @@ myApp.controller('ListViewController', function(UserService, $http) {
         })
       };
 
-      // remove Tasks function
+      // remove Tasks function (function expression)
       lvc.deleteTask = function(id) {
         console.log('calling delete function, id = ', id);
         $http.delete('/tasks/' + id).then(function(response) {

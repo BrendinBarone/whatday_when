@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial', 'checklist-model']);
 
 /// Routes ///
 myApp.config(function($routeProvider, $locationProvider) {

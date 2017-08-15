@@ -1,39 +1,42 @@
 <div ng-controller="ListViewController">
   <div class="container">
     <div layout="row" layout-align="center start">
-    <a href="#/form"><md-button>Add Task</md-button></a>
-      </div>
+      <a href="#/form">
+        <md-button>Add Task</md-button>
+      </a>
+    </div>
+    <h2><span class="topDate" id="nameFrame">The {{lvc.userObject.userName}} Family</span></h2>
     <div layout="row" layout-align="center start">
       <md-button ng-click="lvc.yesterday()">{{lvc.yesterday}}</md-button>
       <span>{{lvc.today}}</span>
-      <md-button  ng-click="lvc.tomorrow()">{{lvc.tomorrow}}</md-button>
+      <md-button ng-click="lvc.tomorrow()">{{lvc.tomorrow}}</md-button>
     </div>
-      <!-- Tasks Table -->
-      <table id="boardLV" class="table table-striped">
-        <thead>
-          <tr>
-            <th>Task Name</th>
-            <th>Time</th>
-            <th colspan="2">Notes</th>
-            <th> </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="task in lvc.tasks">
-            <td>{{task.taskname}}</td>
-            <td>{{task.time}}</td>
-            <td colspan="2">{{task.notes}}</td>
-            <!-- Row-Buttons  -->
-            <td>
-              <md-button class="smallButton">Edit</md-button>
-            </td>
-            <td>
-              <md-button class="smallButton" ng-click="lvc.deleteTask(task.id)">Remove</md-button>
-            </td>
-            <td>
-              <md-button class="smallButton">Complete!!</md-button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- Tasks Table -->
+    <table id="boardLV" class="table table-striped">
+      <thead>
+        <tr>
+          <th>Task Name</th>
+          <th>Time</th>
+          <th colspan="2">Notes</th>
+          <th> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="task in lvc.tasks">
+          <td>{{task.taskname}}</td>
+          <td>{{task.time}}</td>
+          <td colspan="2">{{task.notes}}</td>
+          <!-- Row-Buttons  -->
+          <td>
+            <md-button class="smallButton">Edit</md-button>
+          </td>
+          <td>
+            <md-button class="smallButton" ng-click="lvc.deleteTask(task.id)">Remove</md-button>
+          </td>
+          <td>
+            <md-button class="smallButton">Complete!!</md-button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>

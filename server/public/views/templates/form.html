@@ -8,7 +8,7 @@
         <div>
           <md-input-container>
             <label>Task Name</label>
-            <input type="text" ng-model="tasks.taskname">
+            <input type="text" ng-model="fc.results.taskname">
           </md-input-container>
         </div>
       </md-content>
@@ -17,25 +17,28 @@
         <div>
           <md-input-container>
             <label>Time</label>
-            <input type="time" ng-model="tasks.time" />
+            <input type="time" ng-model="fc.results.time" />
           </md-input-container>
         </div>
       </md-content>
       <!-- Task Notes -->
       <md-input-container class="md-block">
         <label>Notes</label>
-        <textarea ng-model="tasks.notes" md-maxlength="142" rows="4" md-select-on-focus></textarea>
+        <textarea ng-model="fc.results.notes" md-maxlength="142" rows="4" md-select-on-focus></textarea>
       </md-input-container>
+      {{fc.results.date}}
       <!-- Date-Picker -->
-      <input type="checkbox" checklist-model="date1">{{fc.today}}
-      <input type="checkbox" checklist-model="date2">{{fc.tomorrow}}
-      <input type="checkbox" checklist-model="date3">{{fc.twoDays}}
-      <input type="checkbox" checklist-model="date4">{{fc.threeDays}}
-      <input type="checkbox" checklist-model="date5">{{fc.fourDays}}
-      <input type="checkbox" checklist-model="date6">{{fc.fiveDays}}
-      <input type="checkbox" checklist-model="date7">{{fc.sixDays}}
+      <label><input type="checkbox" checklist-model="fc.results.date" checklist-value="fc.todayDate">{{fc.today}}</label>
+      <label><input type="checkbox" checklist-model="fc.results.date" checklist-value="fc.tomorrowDate">{{fc.tomorrow}}</label>
+      <label><input type="checkbox" checklist-model="fc.results.date" checklist-value="fc.twoDaysDate">{{fc.twoDays}}</label>
+      <label><input type="checkbox" checklist-model="fc.results.date" checklist-value="fc.threeDaysDate">{{fc.threeDays}}</label>
+      <label><input type="checkbox" checklist-model="fc.results.date" checklist-value="fc.fourDaysDate">{{fc.fourDays}}</label>
+      <label><input type="checkbox" checklist-model="fc.results.date" checklist-value="fc.fiveDaysDate">{{fc.fiveDays}}</label>
+      <label><input type="checkbox" checklist-model="fc.results.date" checklist-value="fc.sixDaysDate">{{fc.sixDays}}</label>
       <!-- submit button -->
-    <a href="#/listview"><md-button ng-submit="fc.submitForm(tasks.id)">Submit Tasks</md-button></a>
-</form>
+      <a href="#/listview">
+        <md-button ng-click="fc.submitForm()">Submit Tasks</md-button>
+      </a>
+    </form>
 
-</div>
+  </div>
