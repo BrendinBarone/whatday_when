@@ -37,5 +37,16 @@ myApp.controller('ListViewController', function(UserService, $http) {
           getTasks();
           console.log('delete worked', response);
           alert('Task has been deleted');
-        })}
-      });
+        })
+      };
+
+      // update Tasks function
+      lvc.completeTask = function(id) {
+        console.log('calling complete function, id = ', id);
+        $http.put('/tasks/' + id).then(function(response) {
+          getTasks();
+          console.log('complete worked', response);
+          alert('Task has been completed');
+        })
+      };
+    });

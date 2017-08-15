@@ -19,27 +19,27 @@ myApp.controller('FormController', function(UserService, $http) {
 
   // tomorrows date
   fc.tomorrow = moment().add(1, 'days').format('dddd');
-  fc.tomorrowDate = moment().add(1, 'days').format('MMM Do');
+  fc.tomorrowDate = moment().add(1, 'days').format('MM/DD/YYYY');
 
   // twoDays date
   fc.twoDays = moment().add(2, 'days').format('dddd');
-  fc.twoDaysDate = moment().add(2, 'days').format('MMM Do');
+  fc.twoDaysDate = moment().add(2, 'days').format('MM/DD/YYYY');
 
   // threeDays date
   fc.threeDays = moment().add(3, 'days').format('dddd');
-  fc.threeDaysDate = moment().add(3, 'days').format('MMM Do');
+  fc.threeDaysDate = moment().add(3, 'days').format('MM/DD/YYYY');
 
   // fourDays date
   fc.fourDays = moment().add(4, 'days').format('dddd');
-  fc.fourDaysDate = moment().add(4, 'days').format('MMM Do');
+  fc.fourDaysDate = moment().add(4, 'days').format('MM/DD/YYYY');
 
   // fiveDays date
   fc.fiveDays = moment().add(5, 'days').format('dddd');
-  fc.fiveDaysDate = moment().add(5, 'days').format('MMM Do');
+  fc.fiveDaysDate = moment().add(5, 'days').format('MM/DD/YYYY');
 
   // sixDays date
   fc.sixDays = moment().add(6, 'days').format('dddd');
-  fc.sixDaysDate = moment().add(6, 'days').format('MMM Do');
+  fc.sixDaysDate = moment().add(6, 'days').format('MM/DD/YYYY');
 
 
   // submitForm();
