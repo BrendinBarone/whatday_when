@@ -27,13 +27,15 @@ router.post('/', function(req, res) {
       console.log('Error connecting to the database.');
       res.sendStatus(500);
     } else {
+    for (var i = 0; i < taskForm.date.length; i++) {
+      console.log('iterated index:', i);
       // We connected to the database!!!
       // Now we're going to POST things to the db
       var queryText = 'INSERT INTO "tasks" ("taskname", "time", "notes", "user_id", "date") ' +
         'VALUES ($1, $2, $3, $4, $5);';
 
       // errorMakingQuery is a bool, result is an object
-      db.query(queryText, [taskForm.taskname, taskForm.formattedtime, taskForm.notes, req.user.id, taskForm.date], function(errorMakingQuery, result) {
+      db.query(queryText, [taskForm.taskname, taskForm.formattedtime, taskForm.notes, req.user.id, taskForm.date[i]], function(errorMakingQuery, result) {
         done();
 
         if (errorMakingQuery) {
@@ -41,10 +43,12 @@ router.post('/', function(req, res) {
           console.log('Error making query', errorMakingQuery);
           res.sendStatus(500);
         } else {
-          res.sendStatus(200);
+
         }
       }); // end query
     } // end if
+    res.sendStatus(200);
+    }
   }); // end pool
 }); // end of POST
 

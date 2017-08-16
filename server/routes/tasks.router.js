@@ -17,9 +17,12 @@ var config = {
 var pool = new pg.Pool(config);
 
 // NOTE GET ROUTE
-router.get('/', function(req, res) {
+router.post('/', function(req, res) {
   // errorConnecting is bool, db is what we query against,
   // done is a function that we call when we're done
+
+  console.log(req.body);
+
   pool.connect(function(errorConnectingToDatabase, db, done) {
     if (errorConnectingToDatabase) {
       console.log('Error connecting to the database.');
@@ -30,9 +33,9 @@ router.get('/', function(req, res) {
       var queryText = 'SELECT "tasks"."id", "tasks"."user_id", "tasks"."taskname",' +
         '"tasks"."date", "tasks"."time", "tasks"."notes", "users"."username" ' +
         'FROM "tasks" JOIN "users" ON "users"."id" = "tasks"."user_id"' +
-        'WHERE "users"."id"= $1 AND "completed"= false ORDER BY "time" ASC ;';
+        'WHERE "users"."id"= $1 AND "completed"= false AND "date" = $2 ORDER BY "time" ASC ;';
       // errorMakingQuery is a bool, result is an object
-      db.query(queryText, [req.user.id], function(errorMakingQuery, result) {
+      db.query(queryText, [req.user.id, req.body.obj.dateChange], function(errorMakingQuery, result) {
         done();
         if (errorMakingQuery) {
           console.log('Attempted to query with', queryText);
@@ -46,7 +49,7 @@ router.get('/', function(req, res) {
       }); // end query
     } // end if
   }); // end pool
-}); // end of GET
+}); // end of POST
 
 
 // NOTE DELETE ROUTE
@@ -82,12 +85,12 @@ router.delete('/:id', function(req, res) {
   }); // end pool
 }); // end of DELETE
 
-router.put('/:id', function(req, res){
+router.put('/:id', function(req, res) {
   var id = req.params.id;
   // errorConnecting is bool, db is what we query against,
   // done is a function that we call when we're done
-  pool.connect(function(errorConnectingToDatabase, db, done){
-    if(errorConnectingToDatabase) {
+  pool.connect(function(errorConnectingToDatabase, db, done) {
+    if (errorConnectingToDatabase) {
       console.log('Error connecting to the database.');
       res.sendStatus(500);
     } else {
@@ -95,10 +98,10 @@ router.put('/:id', function(req, res){
       // Now we're going to GET things from the db
       var queryText = 'UPDATE "tasks" SET "completed" = true WHERE id= $1;';
       // errorMakingQuery is a bool, result is an object
-      db.query(queryText, [id], function(errorMakingQuery, result){
+      db.query(queryText, [id], function(errorMakingQuery, result) {
         console.log('update id:', id);
         done();
-        if(errorMakingQuery) {
+        if (errorMakingQuery) {
           console.log('Attempted to query with', queryText);
           console.log('Error making query');
           res.sendStatus(500);
