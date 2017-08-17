@@ -17,7 +17,7 @@ var config = {
 var pool = new pg.Pool(config);
 
 // NOTE GET ROUTE
-router.post('/', function(req, res) {
+router.get('/', function(req, res) {
   // errorConnecting is bool, db is what we query against,
   // done is a function that we call when we're done
 
@@ -33,9 +33,46 @@ router.post('/', function(req, res) {
       var queryText = 'SELECT "tasks"."id", "tasks"."user_id", "tasks"."taskname",' +
         '"tasks"."date", "tasks"."time", "tasks"."notes", "users"."username" ' +
         'FROM "tasks" JOIN "users" ON "users"."id" = "tasks"."user_id"' +
-        'WHERE "users"."id"= $1 AND "completed"= false AND "date" = $2 ORDER BY "time" ASC ;';
+        'WHERE "users"."id"= $1 AND "completed"= false AND "tasks"."date" = CURRENT_DATE ORDER BY "time" ASC ;';
       // errorMakingQuery is a bool, result is an object
-      db.query(queryText, [req.user.id, req.body.obj.dateChange], function(errorMakingQuery, result) {
+      db.query(queryText, [req.user.id], function(errorMakingQuery, result) {
+        done();
+        if (errorMakingQuery) {
+          console.log('Attempted to query with', queryText);
+          console.log('Error making query');
+          res.sendStatus(500);
+        } else {
+          console.log(result.rows);
+          // Send back the results
+          res.send(result.rows);
+        }
+      }); // end query
+    } // end if
+  }); // end pool
+}); // end of GET
+
+// NOTE GET ROUTE
+router.post('/', function(req, res) {
+  // errorConnecting is bool, db is what we query against,
+  // done is a function that we call when we're done
+
+  console.log(req.body);
+  console.log('test');
+  console.log('dateChange fkdjsakl;fds', req.body.dateChange);
+
+  pool.connect(function(errorConnectingToDatabase, db, done) {
+    if (errorConnectingToDatabase) {
+      console.log('Error connecting to the database.');
+      res.sendStatus(500);
+    } else {
+      // We connected to the database!!!
+      // Now we're going to GET things from the db
+      var queryText = 'SELECT "tasks"."id", "tasks"."user_id", "tasks"."taskname",' +
+        '"tasks"."date", "tasks"."time", "tasks"."notes", "users"."username" ' +
+        'FROM "tasks" JOIN "users" ON "users"."id" = "tasks"."user_id"' +
+        'WHERE "users"."id"= $1 AND "date" = $2 AND "completed"= false ORDER BY "time" ASC ;';
+      // errorMakingQuery is a bool, result is an object
+      db.query(queryText, [req.user.id, req.body.dateChange], function(errorMakingQuery, result) {
         done();
         if (errorMakingQuery) {
           console.log('Attempted to query with', queryText);

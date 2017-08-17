@@ -3,13 +3,10 @@ myApp.controller('ListViewController', function(UserService, $http) {
   var lvc = this;
   lvc.userService = UserService;
   lvc.userObject = UserService.userObject;
-  // todays date
-  var today = moment().calendar();
-  console.log(today);
-  lvc.today = today;
 
-  // tomorrows date
-  var tomorrow = moment().add(1, 'days').calendar('dddd');
+  // todays date
+  lvc.today = moment().calendar();
+  lvc.todayDate = moment().format('MM/DD/YYYY');
 
   // tomorrows date
   lvc.tomorrow = moment().add(1, 'days').format('dddd');
@@ -37,7 +34,7 @@ myApp.controller('ListViewController', function(UserService, $http) {
 
   lvc.todayFunc = function() {
     var obj = {
-      obj.dateChange: lvc.todayDate
+      dateChange: lvc.todayDate
     };
     console.log('today', obj.dateChange);
     getTasks(obj);
@@ -45,7 +42,7 @@ myApp.controller('ListViewController', function(UserService, $http) {
 
   lvc.tomorrowFunc = function() {
     var obj = {
-      obj.dateChange: lvc.tomorrowDate
+      dateChange: lvc.tomorrowDate
     };
     console.log('tomorrow', obj.dateChange);
     getTasks(obj);
@@ -88,7 +85,15 @@ myApp.controller('ListViewController', function(UserService, $http) {
   }
 
   //call gettasks function to pull tasks from DB
-  getTasks();
+  startList();
+
+  function startList() {
+    $http.get('/tasks').then(function(response) { //get request in disguise
+      console.log(response.data);
+      lvc.tasks = response.data;
+      console.log("listview object", lvc.tasks);
+    })
+  };
 
   // getTasks function (function declaration)
   function getTasks(obj) {
@@ -103,7 +108,7 @@ myApp.controller('ListViewController', function(UserService, $http) {
   lvc.deleteTask = function(id) {
     console.log('calling delete function, id = ', id);
     $http.delete('/tasks/' + id).then(function(response) {
-      getTasks();
+      getTasks(obj);
       console.log('delete worked', response);
       alert('Task has been deleted');
     })

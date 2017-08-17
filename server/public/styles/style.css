@@ -114,7 +114,6 @@ li a {
 
 
 /* Change the link color to #eee on hover */
-
 li a:hover {
   text-decoration: underline;
   color: #eee;
@@ -131,6 +130,12 @@ li a:hover {
   color: #8a4db3;
   text-shadow: 0px 1px 2px #2b9988;
 }
+.lead{
+  -ms-transform: rotate(-9deg); /* IE 9 */
+    -webkit-transform: rotate(-9deg); /* Chrome, Safari, Opera */
+    transform: rotate(-9deg);
+    float: right;
+}
 #nameFrame {
   background-color: #e3e3e3;
   padding: 8px;
@@ -145,4 +150,8 @@ li a:hover {
 }
 #boardC {
   background-color: #3caa99;
+}
+#logo {
+  width: 100px;
+float: right;
 }

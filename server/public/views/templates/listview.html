@@ -1,19 +1,23 @@
 <div ng-controller="ListViewController">
   <div class="container">
     <div layout="row" layout-align="center start">
+      <h2><span class="topDate" id="nameFrame">The {{lvc.userObject.userName}} Family</span></h2>
+    </div>
+    <div layout="row" layout-align="center start">
       <a href="#/form">
         <md-button>Add Task</md-button>
       </a>
     </div>
-    <h2><span class="topDate" id="nameFrame">The {{lvc.userObject.userName}} Family</span></h2>
     <div layout="row" layout-align="center start">
       <md-button ng-click="lvc.todayFunc()">{{lvc.today}}</md-button>
       <md-button ng-click="lvc.tomorrowFunc()">{{lvc.tomorrow}}</md-button>
       <md-button ng-click="lvc.twoDaysFunc()">{{lvc.twoDays}}</md-button>
+    </div>
+    <div layout="row" layout-align="center start">
       <md-button ng-click="lvc.threeDaysFunc()">{{lvc.threeDays}}</md-button>
       <md-button ng-click="lvc.fourDaysFunc()">{{lvc.fourDays}}</md-button>
       <md-button ng-click="lvc.fiveDaysFunc()">{{lvc.fiveDays}}</md-button>
-      <md-button ng-click="lvc.sixDaysFunc())">{{lvc.sixDays}}</md-button>
+      <md-button ng-click="lvc.sixDaysFunc()">{{lvc.sixDays}}</md-button>
     </div>
     <!-- Tasks Table -->
     <table id="boardLV" class="table table-striped">
