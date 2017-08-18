@@ -2,64 +2,50 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: 'Crimson Text', serif;
-  font-size: 14px;
-  background: #666;
+  font-size: 22px;
+  background: #aaa;
 }
 
-button {
-  background: #8a4db3;
-  background-image: -webkit-linear-gradient(top, #636363, #000000);
-  background-image: -moz-linear-gradient(top, #636363, #000000);
-  background-image: -ms-linear-gradient(top, #636363, #000000);
-  background-image: -o-linear-gradient(top, #636363, #000000);
-  background-image: linear-gradient(to bottom, #636363, #000000);
-  -webkit-border-radius: 32;
-  -moz-border-radius: 32;
-  border-radius: 32px;
-  font-family: Arial;
-  color: #2b9988;
-  font-size: 12px;
-  padding: 6px 8px 6px 8px;
-  text-decoration: none;
+
+md-list-item.md-2-line .md-list-item-text h3, md-list-item.md-2-line>.md-no-style .md-list-item-text h3, md-list-item.md-3-line .md-list-item-text h3, md-list-item.md-3-line>.md-no-style .md-list-item-text h3 {
+  font-size: 30px;
+  font-weight: bolder;
 }
 
-button:hover {
-  background: #2b9988;
-  background-image: -webkit-linear-gradient(top, #2b9988, #363636);
-  background-image: -moz-linear-gradient(top, #2b9988, #363636);
-  background-image: -ms-linear-gradient(top, #2b9988, #363636);
-  background-image: -o-linear-gradient(top, #2b9988, #363636);
-  background-image: linear-gradient(to bottom, #2b9988, #363636);
-  text-decoration: none;
-  color: #eee;
-  text-shadow: 0px 1px #8a4db3;
+md-list-item.md-2-line .md-list-item-text h4, md-list-item.md-2-line>.md-no-style .md-list-item-text h4, md-list-item.md-3-line .md-list-item-text h4, md-list-item.md-3-line>.md-no-style .md-list-item-text h4 {
+  font-size: 28px;
 }
-
-.smallButton {
-  font-size: 10px;
-  padding: 6px 8px 6px 8px;
+md-list-item.md-2-line .md-list-item-text h5, md-list-item.md-2-line>.md-no-style .md-list-item-text h5, md-list-item.md-3-line .md-list-item-text h5, md-list-item.md-3-line>.md-no-style .md-list-item-text h5 {
+  font-size: 20px;
+}
+/*.md-button.md-default-theme:not([disabled]).md-focused, .md-button:not([disabled]).md-focused, .md-button.md-default-theme:not([disabled]):hover, .md-button:not([disabled]):hover {
+    background-color: #FFB74D;*/
+}
+md-button {
+  border: 1px, solid #ff9800;
 }
 
 .instructions .container h1 {
   font-family: 'Fredericka the Great', cursive;
   font-size: 42px;
   font-weight: 600;
-  color: #2b9988;
-  text-shadow: 0px 1px #8a4db3;
+  color: #FF9800;
+  width: 100%;
 }
 
 .instructions {
-  background-color: #363636;
-  color: #8a4db3;
+  background-color: #333;
+  /*color: #8a4db3;*/
   padding: 15px;
+  width: 100%;
 }
 
 #entryForm {
-  margin-top: 14px;
+  margin-top: 8px;
 }
 
 #container {
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .container p {
@@ -75,7 +61,7 @@ button:hover {
 }
 
 .message:nth-child(odd) {
-  background-color: #eeeeee;
+  background-color: #8f8f8f;
 }
 
 .message:nth-child(even) {
@@ -87,11 +73,10 @@ button:hover {
 }
 
 .navbar {
-  background-color: #2b9988;
+  background-color: #eee;
   width: 100%;
   border-radius: 0px;
 }
-
 ul {
   list-style-type: none;
   margin: 0;
@@ -105,13 +90,15 @@ li {
 
 li a {
   display: block;
-  color: #363636;
+  color: #030303;
+  font-size: 28px;
   text-shadow: 0px 1px #bbb;
   text-align: center;
   padding: 10px 6px;
   text-decoration: none;
+  background-color: #888;
+  border-radius: 34px;
 }
-
 
 /* Change the link color to #eee on hover */
 li a:hover {
@@ -119,39 +106,40 @@ li a:hover {
   color: #eee;
   text-shadow: 0px 1px #8a4db3;
 }
-
-.topDate {
-  font-family: 'Fredericka the Great', cursive;
-  color: #8a4db3;
-  text-shadow: 0px 1px #2b9988;
+.add{
+  color: #030303;
+  font-size: 18px;
+  text-shadow: 0px 1px #bbb;
+  text-align: center;
+  padding: 1px 2px;
+  text-decoration: none;
+  background-color: #888;
+  border-radius: 34px;
 }
-.purp {
-  font-family: 'Fredericka the Great', cursive;
-  color: #8a4db3;
-  text-shadow: 0px 1px 2px #2b9988;
-}
-.lead{
-  -ms-transform: rotate(-9deg); /* IE 9 */
-    -webkit-transform: rotate(-9deg); /* Chrome, Safari, Opera */
+.lead {
+  -ms-transform: rotate(-9deg); /*IE 9*/
+    -webkit-transform: rotate(-9deg); /*Chrome, Safari, Opera*/
     transform: rotate(-9deg);
     float: right;
+    font-family: 'Fredericka the Great', cursive;
+    color: #FF9800;
+    font-weight: bolder;
 }
-#nameFrame {
-  background-color: #e3e3e3;
-  padding: 8px;
-  border-radius: 34px;
+.questions{
+  color: #bbb;
+  text-shadow: 1px 1px 8px #Ff9800;
+}
+#logo{
   float: right;
-}
-#boardLV {
-  background-color: #3caa99;
-}
-#boardF {
-  background-color: #3caa99;
-}
-#boardC {
-  background-color: #3caa99;
-}
-#logo {
   width: 100px;
-float: right;
+}
+.table{
+  width: 100%;
+  margin: 0;
+}
+.space {
+  background-color: #FFB74D;
+}
+md-checkbox.md-default-theme.md-checked .md-ink-ripple, md-checkbox.md-checked .md-ink-ripple {
+  background-color: #ff9800;
 }

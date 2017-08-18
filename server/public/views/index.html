@@ -5,18 +5,21 @@
   <meta name="viewport" content="width=device-width" />
   <title>WhatDay.When?</title>
   <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Crimson+Text|Indie+Flower" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="vendors/angular-material/angular-material.min.css">
+  <link rel="stylesheet" type="text/css" href="vendors/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/style.css">
+
   <script type="text/javascript" src="vendors/angular/angular.min.js"></script>
-  <script type="text/javascript" src="vendors/angular-route/angular-route.min.js"></script>
-  <script type="text/javascript" src="vendors/angular-messages.min.js"></script>
   <script type="text/javascript" src="vendors/angular-aria/angular-aria.min.js"></script>
   <script type="text/javascript" src="vendors/angular-animate/angular-animate.min.js"></script>
+  <script type="text/javascript" src="vendors/angular-messages/angular-messages.min.js"></script>
   <script type="text/javascript" src="vendors/angular-material/angular-material.min.js"></script>
+  <script type="text/javascript" src="vendors/angular-route/angular-route.min.js"></script>
+
   <script type="text/javascript" src="vendors/checklist-model.js"></script>
   <script src="vendors/moment/min/moment-with-locales.js"></script>
   <script src="vendors/moment/moment.js"></script>
-  <link href="vendors/angular-material/angular-material.min.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="vendors/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles/style.css">
+
   <script type="text/javascript" src="scripts/client.js"></script>
   <script type="text/javascript" src="scripts/controllers/form.controller.js"></script>
   <script type="text/javascript" src="scripts/controllers/listview.controller.js"></script>
@@ -29,7 +32,6 @@
 <body ng-app="myApp">
   <header ng-include="'/views/partials/header.html'"></header>
   <header ng-include="'/views/partials/nav.html'"></header>
-
   <main ng-view></main>
 
 </body>

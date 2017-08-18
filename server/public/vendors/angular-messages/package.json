@@ -1,0 +1,63 @@
+{
+  "_from": "angular-messages",
+  "_id": "angular-messages@1.6.5",
+  "_inBundle": false,
+  "_integrity": "sha1-zIEnxI38R+af7dCw6t1al9GJg6g=",
+  "_location": "/angular-messages",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "angular-messages",
+    "name": "angular-messages",
+    "escapedName": "angular-messages",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-messages/-/angular-messages-1.6.5.tgz",
+  "_shasum": "cc8127c48dfc47e69fedd0b0eadd5a97d18983a8",
+  "_spec": "angular-messages",
+  "_where": "/Users/brendinbarone/Desktop/Prime/SoloProject/whatday_when",
+  "author": {
+    "name": "Angular Core Team",
+    "email": "angular-core+npm@google.com"
+  },
+  "bugs": {
+    "url": "https://github.com/angular/angular.js/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "AngularJS module that provides enhanced support for displaying messages within templates",
+  "homepage": "http://angularjs.org",
+  "jspm": {
+    "shim": {
+      "angular-messages": {
+        "deps": [
+          "angular"
+        ]
+      }
+    }
+  },
+  "keywords": [
+    "angular",
+    "framework",
+    "browser",
+    "client-side"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "angular-messages",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular/angular.js.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.6.5"
+}

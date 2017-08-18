@@ -108,9 +108,9 @@ myApp.controller('ListViewController', function(UserService, $http) {
   lvc.deleteTask = function(id) {
     console.log('calling delete function, id = ', id);
     $http.delete('/tasks/' + id).then(function(response) {
-      getTasks(obj);
       console.log('delete worked', response);
       alert('Task has been deleted');
+      startList();
     })
   };
 

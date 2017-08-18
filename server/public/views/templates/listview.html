@@ -1,26 +1,38 @@
 <div ng-controller="ListViewController">
   <div class="container">
     <div layout="row" layout-align="center start">
-      <h2><span class="topDate" id="nameFrame">The {{lvc.userObject.userName}} Family</span></h2>
+      <h2><span>The {{lvc.userObject.userName}} Family</span></h2>
     </div>
     <div layout="row" layout-align="center start">
-      <a href="#/form">
+      <a class="add space" href="#/form">
         <md-button>Add Task</md-button>
       </a>
     </div>
     <div layout="row" layout-align="center start">
-      <md-button ng-click="lvc.todayFunc()">{{lvc.today}}</md-button>
-      <md-button ng-click="lvc.tomorrowFunc()">{{lvc.tomorrow}}</md-button>
-      <md-button ng-click="lvc.twoDaysFunc()">{{lvc.twoDays}}</md-button>
+      <md-button class="add" ng-click="lvc.todayFunc()">{{lvc.today}}</md-button>
+      <md-button class="add" ng-click="lvc.tomorrowFunc()">{{lvc.tomorrow}}</md-button>
+      <md-button class="add" ng-click="lvc.twoDaysFunc()">{{lvc.twoDays}}</md-button>
     </div>
     <div layout="row" layout-align="center start">
-      <md-button ng-click="lvc.threeDaysFunc()">{{lvc.threeDays}}</md-button>
-      <md-button ng-click="lvc.fourDaysFunc()">{{lvc.fourDays}}</md-button>
-      <md-button ng-click="lvc.fiveDaysFunc()">{{lvc.fiveDays}}</md-button>
-      <md-button ng-click="lvc.sixDaysFunc()">{{lvc.sixDays}}</md-button>
+      <md-button class="add" ng-click="lvc.threeDaysFunc()">{{lvc.threeDays}}</md-button>
+      <md-button class="add" ng-click="lvc.fourDaysFunc()">{{lvc.fourDays}}</md-button>
+      <md-button class="add" ng-click="lvc.fiveDaysFunc()">{{lvc.fiveDays}}</md-button>
+      <md-button class="add" ng-click="lvc.sixDaysFunc()">{{lvc.sixDays}}</md-button>
     </div>
+    <md-content>
+      <md-list flex>
+        <md-list-item class="md-3-line" ng-repeat="task in lvc.tasks" ng-click="null">
+          <div class="md-list-item-text" layout="column">
+            <h3>{{ task.taskname }}</h3>
+            <h5>{{ task.time }}</h5>
+            <h4>{{ task.notes }}</h4>
+            <md-button ng-click="lvc.deleteTask(task.id)">Remove</md-button>
+            <md-button ng-click="lvc.completeTask(task.id)">Complete!!</md-button>
+          </div>
+        </md-list-item>
+        </div>
     <!-- Tasks Table -->
-    <table id="boardLV" class="table table-striped">
+    <!-- <table class="table table-striped">
       <thead>
         <tr>
           <th>Task Name</th>
@@ -35,16 +47,12 @@
           <td>{{task.time}}</td>
           <td colspan="2">{{task.notes}}</td>
           <!-- Row-Buttons  -->
-          <td>
-            <md-button class="smallButton">Edit</md-button>
+          <!-- <td>
+            <md-button ng-click="lvc.deleteTask(task.id)">Remove</md-button>
           </td>
           <td>
-            <md-button class="smallButton" ng-click="lvc.deleteTask(task.id)">Remove</md-button>
-          </td>
-          <td>
-            <md-button class="smallButton" ng-click="lvc.completeTask(task.id)">Complete!!</md-button>
+            <md-button ng-click="lvc.completeTask(task.id)">Complete!!</md-button>
           </td>
         </tr>
       </tbody>
-    </table>
-  </div>
+    </table> -->

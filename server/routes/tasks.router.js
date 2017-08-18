@@ -22,7 +22,7 @@ router.get('/', function(req, res) {
   // done is a function that we call when we're done
 
   console.log(req.body);
-
+if(req.isAuthenticated()){
   pool.connect(function(errorConnectingToDatabase, db, done) {
     if (errorConnectingToDatabase) {
       console.log('Error connecting to the database.');
@@ -49,6 +49,7 @@ router.get('/', function(req, res) {
       }); // end query
     } // end if
   }); // end pool
+} else {req.sendStatus(401)}
 }); // end of GET
 
 // NOTE GET ROUTE

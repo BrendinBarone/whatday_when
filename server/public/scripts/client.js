@@ -1,13 +1,12 @@
 var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial', 'checklist-model']);
 
 myApp.config(function($mdThemingProvider) {
-$mdThemingProvider.theme('default')
-   //.backgroundPalette(‘white’)
-   .primaryPalette('teal')
-   .accentPalette('deep-purple')
-   .backgroundPalette('teal')
-   .warnPalette('red');
-});
+  $mdThemingProvider.theme('orange')
+      .primaryPalette('deep-orange')
+      .accentPalette('orange')
+      .warnPalette('orange')
+      .backgroundPalette('deep-orange');
+  });
 /// Routes ///
 myApp.config(function($routeProvider, $locationProvider) {
   $locationProvider.hashPrefix('');
