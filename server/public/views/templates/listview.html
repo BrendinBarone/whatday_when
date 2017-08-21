@@ -1,20 +1,20 @@
 <div ng-controller="ListViewController">
   <div class="container">
-    <div layout="row" layout-align="center start">
+    <!-- <div layout="row" layout-align="center start">
       <h2><span>The {{lvc.userObject.userName}} Family</span></h2>
+    </div> -->
+    <div layout="row" layout-align="center start">
+
+      <md-button> <a class="add space" href="#/form">Add Task  </a></md-button>
     </div>
     <div layout="row" layout-align="center start">
-      <a class="add space" href="#/form">
-        <md-button>Add Task</md-button>
-      </a>
-    </div>
-    <div layout="row" layout-align="center start">
-      <md-button class="add" ng-click="lvc.todayFunc()">{{lvc.today}}</md-button>
-      <md-button class="add" ng-click="lvc.tomorrowFunc()">{{lvc.tomorrow}}</md-button>
+  <md-button class="add" ng-click="lvc.todayFunc()">Today</md-button>
+      <md-button class="add" ng-click="lvc.tomorrowFunc()">Tomorrow</md-button>
       <md-button class="add" ng-click="lvc.twoDaysFunc()">{{lvc.twoDays}}</md-button>
+
     </div>
     <div layout="row" layout-align="center start">
-      <md-button class="add" ng-click="lvc.threeDaysFunc()">{{lvc.threeDays}}</md-button>
+<md-button class="add" ng-click="lvc.threeDaysFunc()">{{lvc.threeDays}}</md-button>
       <md-button class="add" ng-click="lvc.fourDaysFunc()">{{lvc.fourDays}}</md-button>
       <md-button class="add" ng-click="lvc.fiveDaysFunc()">{{lvc.fiveDays}}</md-button>
       <md-button class="add" ng-click="lvc.sixDaysFunc()">{{lvc.sixDays}}</md-button>
@@ -30,9 +30,9 @@
             <md-button ng-click="lvc.completeTask(task.id)">Complete!!</md-button>
           </div>
         </md-list-item>
-        </div>
-    <!-- Tasks Table -->
-    <!-- <table class="table table-striped">
+  </div>
+  <!-- Tasks Table -->
+  <!-- <table class="table table-striped">
       <thead>
         <tr>
           <th>Task Name</th>
@@ -47,7 +47,7 @@
           <td>{{task.time}}</td>
           <td colspan="2">{{task.notes}}</td>
           <!-- Row-Buttons  -->
-          <!-- <td>
+  <!-- <td>
             <md-button ng-click="lvc.deleteTask(task.id)">Remove</md-button>
           </td>
           <td>

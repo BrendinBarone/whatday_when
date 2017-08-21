@@ -1,7 +1,7 @@
 <div ng-controller="CompletedController">
   <div class="container">
     <h3>Way to go, Look what you've done!!</h3>
-    <h2><span>The {{cc.userObject.userName}} Family</span></h2>
+    <h2><span class="welcome name the">The {{cc.userObject.userName}}'s</span></h2>
     <md-content>
       <md-list flex>
         <md-list-item class="md-3-line" ng-repeat="task in cc.tasks | orderBy : date" ng-click="null">

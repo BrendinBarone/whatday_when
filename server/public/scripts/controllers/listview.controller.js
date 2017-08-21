@@ -9,27 +9,27 @@ myApp.controller('ListViewController', function(UserService, $http) {
   lvc.todayDate = moment().format('MM/DD/YYYY');
 
   // tomorrows date
-  lvc.tomorrow = moment().add(1, 'days').format('dddd');
+  lvc.tomorrow = moment().add(1, 'days').format('ddd');
   lvc.tomorrowDate = moment().add(1, 'days').format('MM/DD/YYYY');
 
   // twoDays date
-  lvc.twoDays = moment().add(2, 'days').format('dddd');
+  lvc.twoDays = moment().add(2, 'days').format('ddd');
   lvc.twoDaysDate = moment().add(2, 'days').format('MM/DD/YYYY');
 
   // threeDays date
-  lvc.threeDays = moment().add(3, 'days').format('dddd');
+  lvc.threeDays = moment().add(3, 'days').format('ddd');
   lvc.threeDaysDate = moment().add(3, 'days').format('MM/DD/YYYY');
 
   // fourDays date
-  lvc.fourDays = moment().add(4, 'days').format('dddd');
+  lvc.fourDays = moment().add(4, 'days').format('ddd');
   lvc.fourDaysDate = moment().add(4, 'days').format('MM/DD/YYYY');
 
   // fiveDays date
-  lvc.fiveDays = moment().add(5, 'days').format('dddd');
+  lvc.fiveDays = moment().add(5, 'days').format('ddd');
   lvc.fiveDaysDate = moment().add(5, 'days').format('MM/DD/YYYY');
 
   // sixDays date
-  lvc.sixDays = moment().add(6, 'days').format('dddd');
+  lvc.sixDays = moment().add(6, 'days').format('ddd');
   lvc.sixDaysDate = moment().add(6, 'days').format('MM/DD/YYYY');
 
   lvc.todayFunc = function() {
