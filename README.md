@@ -27,7 +27,7 @@ Link to software that is required to install the app (e.g. node).
 - [Moment.js](https://momentjs.com/)
 
 ### Installing
-
+--vendors folder is not ignored (lots of files attached)
 Steps to get the development environment running.
 
 ```sql
